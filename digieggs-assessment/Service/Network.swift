@@ -8,10 +8,32 @@
 import Foundation
 import Apollo
 
-class Network {
-  static let shared = Network()
-
-  private let serviceURL = "https://rickandmortyapi.com/graphql"
-  private(set) lazy var apollo = ApolloClient(url: URL(string: serviceURL)!)
+protocol INetwork {
+    func getAllCharacters(page: Int, characterName: String, homeViewDelegate: IHomeViewModelDelegate)
 }
+
+final class Network: INetwork {
+    private let baseURL: String = "https://rickandmortyapi.com/graphql"
+    private var apolloClient: ApolloClient
+    
+    init() {
+        apolloClient = ApolloClient(url: URL(string: baseURL)!)
+    }
+    
+    func getAllCharacters(page: Int, characterName: String, homeViewDelegate: IHomeViewModelDelegate) {
+        apolloClient.fetch(query: AllCharacterQuery(page: page, name: characterName)) { result in
+            switch result {
+                case .success(let response):
+                    if let characters = response.data?.characters {
+                        homeViewDelegate.setRickAndMortyDatas(data: characters)
+                    } else {
+                        homeViewDelegate.isFinish(finished: true)
+                    }
+                case .failure(let error):
+                    print("Network Error: \(error)")
+            }
+        }
+    }
+}
+    
 

@@ -10,6 +10,7 @@ import Foundation
 protocol IHomeViewModel {
     func fetch(page: Int, characterName: String)
     var homeViewDelegate: IHomeViewModelDelegate? {get set}
+    var network: INetwork { get set }
 }
 
 protocol IHomeViewModelDelegate {
@@ -19,21 +20,13 @@ protocol IHomeViewModelDelegate {
 
 final class HomeViewModel: IHomeViewModel {
     var homeViewDelegate: IHomeViewModelDelegate?
+    var network: INetwork = Network()
     var isLoading: Bool = false
     
     
     func fetch(page: Int, characterName: String) {
-        Network.shared.apollo.fetch(query: AllCharacterQuery(page: page, name: characterName)) { result in
-            switch result {
-                case .success(let response):
-                    if let characters = response.data?.characters {
-                        self.homeViewDelegate?.setRickAndMortyDatas(data: characters)
-                    } else {
-                        self.homeViewDelegate?.isFinish(finished: true)
-                    }
-                case .failure(let error):
-                    print("Network Error: \(error)")
-            }
+        if let homeViewDelegate = homeViewDelegate {
+            network.getAllCharacters(page: page, characterName: characterName, homeViewDelegate: homeViewDelegate)
         }
     }
 }
