@@ -21,12 +21,12 @@ protocol IHomeViewModelDelegate {
 final class HomeViewModel: IHomeViewModel {
     var homeViewDelegate: IHomeViewModelDelegate?
     var network: INetwork = Network()
-    var isLoading: Bool = false
-    
     
     func fetch(page: Int, characterName: String) {
         if let homeViewDelegate = homeViewDelegate {
-            network.getAllCharacters(page: page, characterName: characterName, homeViewDelegate: homeViewDelegate)
+            DispatchQueue.global(qos: .background).async {
+                self.network.getAllCharacters(page: page, characterName: characterName, homeViewDelegate: homeViewDelegate)
+            }
         }
     }
 }

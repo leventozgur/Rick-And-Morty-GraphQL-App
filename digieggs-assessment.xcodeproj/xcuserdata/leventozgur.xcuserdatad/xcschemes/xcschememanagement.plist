@@ -9,21 +9,21 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>7</integer>
 		</dict>
 		<key>SQLite (Playground) 2.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>8</integer>
 		</dict>
 		<key>SQLite (Playground).xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>6</integer>
 		</dict>
 		<key>SnapKitPlayground (Playground) 1.xcscheme</key>
 		<dict>
@@ -44,7 +44,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>5</integer>
 		</dict>
 		<key>digieggs-assessment.xcscheme_^#shared#^_</key>
 		<dict>
@@ -55,6 +55,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>A040B85C27DB3206007EA5AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A07A933927DCB77C00C63A7A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

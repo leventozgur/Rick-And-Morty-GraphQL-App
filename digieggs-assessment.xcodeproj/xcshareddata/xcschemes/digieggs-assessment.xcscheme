@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A07A934627DCBB7D00C63A7A"
+               BuildableName = "digieggs-assessmentUITests.xctest"
+               BlueprintName = "digieggs-assessmentUITests"
+               ReferencedContainer = "container:digieggs-assessment.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A07A935527DCC92100C63A7A"
+               BuildableName = "digieggs-assessmentTests.xctest"
+               BlueprintName = "digieggs-assessmentTests"
+               ReferencedContainer = "container:digieggs-assessment.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
