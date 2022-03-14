@@ -66,8 +66,8 @@ class FilterAlertView: UIViewController {
         
         setFilterFieldsFeatures(label: rowName1, button: rowButton1)
         setFilterFieldsFeatures(label: rowName2, button: rowButton2)
-        rowName1.text = "Rick"
-        rowName2.text = "Morty"
+        rowName1.text = FilterValuesEnum.rick.rawValue
+        rowName2.text = FilterValuesEnum.morty.rawValue
         
         rowButton1.tag = 0
         rowButton2.tag = 1

@@ -28,6 +28,7 @@
 		A07A934A27DCBB7D00C63A7A /* digieggs_assessmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A934927DCBB7D00C63A7A /* digieggs_assessmentUITests.swift */; };
 		A07A934C27DCBB7D00C63A7A /* digieggs_assessmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A934B27DCBB7D00C63A7A /* digieggs_assessmentUITestsLaunchTests.swift */; };
 		A07A935927DCC92100C63A7A /* digieggs_assessmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A935827DCC92100C63A7A /* digieggs_assessmentTests.swift */; };
+		A0D1C58227DE8EDC00FC35A6 /* FilterValuesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1C58127DE8EDC00FC35A6 /* FilterValuesEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		A07A934B27DCBB7D00C63A7A /* digieggs_assessmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = digieggs_assessmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A07A935627DCC92100C63A7A /* digieggs-assessmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "digieggs-assessmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07A935827DCC92100C63A7A /* digieggs_assessmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = digieggs_assessmentTests.swift; sourceTree = "<group>"; };
+		A0D1C58127DE8EDC00FC35A6 /* FilterValuesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterValuesEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				A040B88E27DB4B8F007EA5AF /* HomeViewModel.swift */,
+				A0D1C58127DE8EDC00FC35A6 /* FilterValuesEnum.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				A040B86327DB3206007EA5AF /* SceneDelegate.swift in Sources */,
 				A040B87A27DB329C007EA5AF /* HomeViewController.swift in Sources */,
 				A040B89427DB5D0A007EA5AF /* HomeTableViewCell.swift in Sources */,
+				A0D1C58227DE8EDC00FC35A6 /* FilterValuesEnum.swift in Sources */,
 				A040B89F27DB8276007EA5AF /* FilterAlertView.swift in Sources */,
 				A040B88F27DB4B8F007EA5AF /* HomeViewModel.swift in Sources */,
 				A040B88A27DB4962007EA5AF /* API.swift in Sources */,

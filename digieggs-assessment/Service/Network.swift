@@ -9,31 +9,18 @@ import Foundation
 import Apollo
 
 protocol INetwork {
-    func getAllCharacters(page: Int, characterName: String, homeViewDelegate: IHomeViewModelDelegate)
+    func getAllCharacters(page: Int, characterName: String, callback: @escaping (Result<GraphQLResult<AllCharacterQuery.Data>, Error>) -> Void)
 }
 
 final class Network: INetwork {
-    private let baseURL: String = "https://rickandmortyapi.com/graphql"
-    private var apolloClient: ApolloClient
-    
-    init() {
-        apolloClient = ApolloClient(url: URL(string: baseURL)!)
-    }
-    
-    func getAllCharacters(page: Int, characterName: String, homeViewDelegate: IHomeViewModelDelegate) {
-        apolloClient.fetch(query: AllCharacterQuery(page: page, name: characterName)) { result in
-            switch result {
-                case .success(let response):
-                    if let characters = response.data?.characters {
-                        homeViewDelegate.setRickAndMortyDatas(data: characters)
-                    } else {
-                        homeViewDelegate.isFinish(finished: true)
-                    }
-                case .failure(let error):
-                    print("Network Error: \(error)")
+    static let shared = Network()
+    private(set) lazy var apollo = ApolloClient(url: URL(string: "https://rickandmortyapi.com/graphql")!)
+
+    func getAllCharacters(page: Int, characterName: String, callback: @escaping (Result<GraphQLResult<AllCharacterQuery.Data>, Error>) -> Void) {
+        DispatchQueue.global(qos: .background).async {
+            Network.shared.apollo.fetch(query: AllCharacterQuery(page: page, name: characterName)) { result in
+                callback(result)
             }
         }
     }
 }
-    
-
